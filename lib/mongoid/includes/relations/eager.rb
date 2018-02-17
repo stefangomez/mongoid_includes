@@ -11,7 +11,7 @@ module Mongoid
         def each_loaded_document
           @metadata.load_documents_for(key, keys_from_docs).each do |doc|
             yield doc
-          end
+          end unless keys_from_docs.blank?
         end
       end
     end
